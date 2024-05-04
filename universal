@@ -1,4 +1,4 @@
-/*Universal CSS START*/
+		/*Universal CSS START*/
 		/*Header*/
 		.header{
 			position: fixed;
@@ -22,8 +22,10 @@
             padding: 10px;
             border: 2px solid white;
             border-radius: 5px;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
 		}
-
+		/*Search bar when pressed*/
 		.header input[type=text]:focus {
             background-color: #f1f1f1;
             outline-color: #7fc3e1;
@@ -31,6 +33,23 @@
             transition: .1s;
             transition-property: box-shadow;
         }
+		/*Search bar icon*/
+		.header button{
+			float: left;
+			width: 3%;
+			padding: 10px;
+			background-color: #2f96d0;
+			color: white;
+			font-size: 16px;
+ 			border: none;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+ 			cursor: pointer;
+		}
+		/*Search bar icon when hovering*/
+		.header button:hover{
+			background-color: #2B8ABF;
+		}
 		/*Logo*/
 		.logo{
 			margin-left: 60px;
@@ -50,6 +69,19 @@
 		/*Sidebar when open*/
 		.sidebar.active{
 			width: 180px;
+		}
+		/*Sidebar toggle icon*/
+		#sidebar-toggle{
+			color: #f1f1f1;
+			cursor: pointer;
+			position: absolute;
+			display: flex;
+			padding: 20px 20px 20px 20px;
+			transform: translateX(-33%);
+		}
+		/*Sidebar toggle when hovering*/
+		#sidebar-toggle:hover {
+			color: #D7D7D7;
 		}
 		/*Sidebar links*/
 		.sidebar a{
@@ -73,25 +105,17 @@
 			background-color: #555;
 			color: #f1f1f1;
 		}
-		/*Sidebar toggle icon*/
-		#sidebar-toggle{
-			color: #f1f1f1;
-			cursor: pointer;
-			position: absolute;
-			display: flex;
-			padding: 20px 20px 20px 20px;
-			transform: translateX(-33%);
-		}
 		/*Universal CSS END*/
 
-<!--Universal HTML START-->
+	<!--Universal HTML START-->
 	<div class="header">
 		<i class="fas fa-bars fa-lg" id="sidebar-toggle"></i>
-		<a href="home.html" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" width="100" height="auto"></a> <!--logo with title goes here-->
+		<a href="home.html" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" width="100" height="auto"></a> 
 		<input type="text" placeholder="Search...">
+		<button type="submit"><i class="fa fa-search fa-lg"></i></button>
 	</div>
 	<ul class="sidebar" id="sidebar">
-		<li><a href="home.html"><i class="fas fa-home"></i>Home</a></li>
+		<li><a href="home.html"><i class="fas fa-home "></i>Home</a></li>
         <li><a href="#"><i class="fas fa-cogs"></i>Services</a></li>
         <li><a href="#"><i class="fas fa-shopping-basket"></i>Shop</a></li>
         <li><a href="#"><i class="fas fa-users"></i>About Us</a></li>
@@ -99,7 +123,7 @@
 	</ul>
 	<!--Universal HTML END-->
   
-  //Universal JS START
+  		//Universal JS START
 		let toggleSidebar = document.querySelector("#sidebar-toggle");
 		let sidebar = document.querySelector(".sidebar");
 
