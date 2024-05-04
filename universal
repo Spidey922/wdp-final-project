@@ -1,0 +1,109 @@
+/*Universal CSS START*/
+		/*Header*/
+		.header{
+			position: fixed;
+			height: 5%;
+			background-color: #0c2b43;
+			padding: 10px 16px;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			align-items: center;
+			display:flex;
+			z-index: 999;
+		}
+		/*Search bar*/
+		.header input[type=text] {
+			margin-left: 300px;
+			background-color: #f1f1f1;
+            width: 500px;
+            height: 15px;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+		}
+
+		.header input[type=text]:focus {
+            background-color: #f1f1f1;
+            outline-color: #7fc3e1;
+            box-shadow: -1px 2px 30px #7fc3e1;
+            transition: .1s;
+            transition-property: box-shadow;
+        }
+		/*Logo*/
+		.logo{
+			margin-left: 60px;
+		}
+		/*Sidebar*/
+		.sidebar {
+			height: 100%;
+			width: 50px;
+			background-color: #f1f1f1;
+			position: fixed;
+			list-style-type: none;
+			top: 0;
+			overflow-x: hidden;
+			padding-top: 54px;
+			transition: 0.5s;
+		} 
+		/*Sidebar when open*/
+		.sidebar.active{
+			width: 180px;
+		}
+		/*Sidebar links*/
+		.sidebar a{
+			position: relative;
+			display: flex;
+			color: #000;
+			padding: 10px 16px;
+			text-decoration: none;
+			transition: 0.3s;
+			align-items: center;
+			white-space: nowrap;
+		}
+		/*Sidebar link icons*/
+		.sidebar a i{
+			height: 50px;
+			min-width: 40px;
+			line-height: 50px;
+		}
+		/*Sidebar when hovering over links*/
+		.sidebar a:hover{
+			background-color: #555;
+			color: #f1f1f1;
+		}
+		/*Sidebar toggle icon*/
+		#sidebar-toggle{
+			color: #f1f1f1;
+			cursor: pointer;
+			position: absolute;
+			display: flex;
+			padding: 20px 20px 20px 20px;
+			transform: translateX(-33%);
+		}
+		/*Universal CSS END*/
+
+<!--Universal HTML START-->
+	<div class="header">
+		<i class="fas fa-bars fa-lg" id="sidebar-toggle"></i>
+		<a href="home.html" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" width="100" height="auto"></a> <!--logo with title goes here-->
+		<input type="text" placeholder="Search...">
+	</div>
+	<ul class="sidebar" id="sidebar">
+		<li><a href="home.html"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i>Services</a></li>
+        <li><a href="#"><i class="fas fa-shopping-basket"></i>Shop</a></li>
+        <li><a href="#"><i class="fas fa-users"></i>About Us</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i>Contact Us</a></li>
+	</ul>
+	<!--Universal HTML END-->
+  
+  //Universal JS START
+		let toggleSidebar = document.querySelector("#sidebar-toggle");
+		let sidebar = document.querySelector(".sidebar");
+
+		toggleSidebar.onclick = function(){
+			sidebar.classList.toggle("active");
+		}
+		//Universal JS END
