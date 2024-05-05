@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Hobby Haven | Headline</title>
+	<link rel="icon" href="images/logo min.ico">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		/*Background Image*/
+		body{
+			overflow-x: hidden;
+			width: 100%;
+			height: 200vh;
+			background-color: #7fc3e1;
+			background-image: linear-gradient(transparent, transparent, #7fc3e1, #7fc3e1), url("https://images.alphacoders.com/134/1342705.png");
+			background-position: left top;
+			background-size: 120%;
+			background-repeat: no-repeat;
+		}
+		/*Universal CSS START*/
+		/*Header*/
+		.header{
+			position: fixed;
+			height: 5%;
+			background-color: #0c2b43;
+			padding: 10px 16px;
+			top: 0;
+			left: 0;
+			right: 0;
+			width: 100%;
+			align-items: center;
+			display:flex;
+			z-index: 999;
+		}
+		/*Search bar*/
+		.header input[type=text] {
+			margin-left: 300px;
+			background-color: #f1f1f1;
+            width: 500px;
+            height: 15px;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+			border-top-right-radius: 0;
+			border-bottom-right-radius: 0;
+		}
+		/*Search bar when pressed*/
+		.header input[type=text]:focus {
+            background-color: #f1f1f1;
+            outline-color: #7fc3e1;
+            box-shadow: -1px 2px 30px #7fc3e1;
+            transition: .1s;
+            transition-property: box-shadow;
+        }
+		/*Search bar icon*/
+		.header button{
+			float: left;
+			width: 3%;
+			padding: 10px;
+			background-color: #2f96d0;
+			color: white;
+			font-size: 16px;
+ 			border: none;
+			border-top-right-radius: 5px;
+			border-bottom-right-radius: 5px;
+ 			cursor: pointer;
+		}
+		/*Search bar icon when hovering*/
+		.header button:hover{
+			background-color: #2B8ABF;
+		}
+		/*Logo*/
+		.logo{
+			margin-left: 60px;
+		}
+		/*Sidebar*/
+		.sidebar {
+			height: 100%;
+			width: 50px;
+			background-color: #f1f1f1;
+			position: fixed;
+			list-style-type: none;
+			top: 0;
+			overflow-x: hidden;
+			padding-top: 54px;
+			transition: 0.5s;
+			z-index: 998;
+		} 
+		/*Sidebar when open*/
+		.sidebar.active{
+			width: 180px;
+		}
+		/*Sidebar toggle icon*/
+		#sidebar-toggle{
+			color: #f1f1f1;
+			cursor: pointer;
+			position: absolute;
+			display: flex;
+			padding: 20px 20px 20px 20px;
+			transform: translateX(-33%);
+		}
+		/*Sidebar toggle when hovering*/
+		#sidebar-toggle:hover {
+			color: #D7D7D7;
+		}
+		/*Sidebar links*/
+		.sidebar a{
+			position: relative;
+			display: flex;
+			color: #000;
+			padding: 10px 16px;
+			text-decoration: none;
+			transition: 0.3s;
+			align-items: center;
+			white-space: nowrap;
+		}
+		/*Sidebar link icons*/
+		.sidebar a i{
+			height: 50px;
+			min-width: 40px;
+			line-height: 50px;
+		}
+		/*Sidebar when hovering over links*/
+		.sidebar a:hover{
+			background-color: #555;
+			color: #f1f1f1;
+		}
+		/*Universal CSS END*/
+		/*Headline and Tagline*/
+		.taglines{
+			margin-left: 10%;
+			padding-top: 15%;
+			color: #2F3A40;
+			max-width: 620px;
+			font-size: 20px;
+			text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;  
+		}
+		/*Headline only*/
+		.taglines h1 {
+			font-size: 70px;
+			margin-bottom: 25px;
+		}
+		/*Learn more button*/
+		.learn {
+			margin-left: 10%;
+			margin-top: 2%;
+			position: relative;
+  			display: flex;
+  			align-items: center;
+  			gap: 4px;
+  			padding: 16px 50px;
+  			border: 4px solid;
+  			border-color: transparent;
+  			font-size: 16px;
+  			background-color: #B4DCED;
+  			border-radius: 100px;
+  			font-weight: bold;
+  			color: #2F99C8;
+		  	box-shadow: 0 0 0 2px #2F99C8;
+  			cursor: pointer;
+  			overflow: hidden;
+  			transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+			
+		}
+		/*Learn more icons*/
+		.learn i {
+			position: absolute;
+  			width: 24px;
+ 			fill: #2F99C8;
+			z-index: 9;
+ 			transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+		/*Learn more right arrow icon*/
+		.learn #arrowR {
+			right: 16px;
+		}
+		/*Learn more left arrow icon*/
+		.learn #arrowL {
+			left: -25%;
+		}
+		/*Learn more color inside*/
+		.learn .circle {
+			position: absolute;
+  			top: 50%;
+  			left: 50%;
+  			transform: translate(-50%, -50%);
+  			width: 20px;
+  			height: 20px;
+  			background-color: #2F99C8;
+  			border-radius: 50%;
+  			opacity: 0;
+  			transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+		/*Learn more text*/
+		.learn .text {
+			position: relative;
+ 			z-index: 1;
+  			transform: translateX(-12px);
+  			transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+		}
+		/*Learn more when hovering*/
+		.learn:hover {
+			box-shadow: 0 0 0 12px transparent;
+  			color: #B4DCED;
+  			border-radius: 12px;
+		}
+		/*Learn more right arrow moves right*/
+		.learn:hover #arrowR {
+			right: -25%;
+		}
+		
+		.learn a{
+		text-decoration: none;
+		}
+		
+		.learn a:link {
+         color: white;
+          }
+
+
+        .learn a:visited {
+            color: white;
+        }
+		
+		/*Learn more left arrow moves right*/
+		.learn:hover #arrowL {
+			left: 16px;
+		}
+		/*Learn more text moves right*/
+		.learn:hover .text {
+  			transform: translateX(12px);
+		}
+		/*Learn more icons change color*/
+		.learn:hover i {
+  			fill: #B4DCED;
+		}		
+		/*Learn more when pressed*/
+		.learn:active {
+			scale: 0.95;
+			box-shadow: 0 0 0 4px #2F99C8;
+		}
+		/*Learn more color inside appears*/
+		.learn:hover .circle {
+ 			width: 220px;
+  			height: 220px;
+  			opacity: 1;
+		}
+		/* Footer */
+        .footer {
+            background-color: #0c2b43;
+            color: white;
+            padding:5px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }							
+		                                                                            /*shop*/
+
+        .card3 {
+            width: 300px;
+            height: 254px;
+            border-radius: 20px;
+            background: #0c2b43;
+            position: relative;
+            padding: 10px;
+            border: 2px solid #0c2b43;
+            transition: 0.5s ease-out;
+            overflow: visible;
+            margin-top: 10px; /* Added margin */
+			margin: 0 20px;
+        }
+
+        .card3-details {
+            color: white;
+            height: 100%;
+            gap: 8px;
+            display: grid;
+            place-content: center;
+        }
+		
+
+        .card3-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px; /* Changed padding to pixels */
+    position: absolute;
+    left: 50%;
+    bottom: 10px; /* Increased bottom padding */
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+        .text3-body {
+            color: rgb(134, 134, 134);
+        }
+
+        /*Text*/
+        .text3-title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /*Hover*/
+        .card3:hover {
+            border-color: #008bf8;
+            box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .card3:hover .card3-button {
+            transform: translate(-50%, 50%);
+            opacity: 1;
+        }
+
+        /* Featured Products Border */
+        .wordborder {
+            border: 1px solid #004080;
+            border-radius: 5px;
+            padding: 10px;
+            text-align: center;
+            background-color: #0c2b43;
+            color: white;
+            margin-top:250px;
+            margin-bottom: 1px;
+            overflow: hidden;
+        }											 
+																					/*about*/
+		  /* Card styles */
+        .card {
+            width: 270px;
+            height: 290px;
+            background: #171717;
+            transition: 1s ease-in-out;
+            clip-path: polygon(30px 0%, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%, 0% 30px);
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            margin: 0 20px;
+        }
+
+        .card span {
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            display: block;
+            font-size: 16px;
+        }
+
+        .card .info {
+            font-weight: 400;
+            color: white;
+            display: block;
+            text-align: center;
+            font-size: 11px;
+            margin: 16px;
+        }
+
+        .card .img {
+            width: 77px;
+            height: 77px;
+            background: white;
+            border-radius: 15px;
+            margin: auto;
+        }
+
+        .card .img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+        }
+
+        .card .share {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .card a {
+            color: white;
+            transition: .4s ease-in-out;
+        }
+
+        .card a:hover {
+            color: red;
+        }
+
+        .card button {
+            padding: 13px 27px;
+            display: block;
+            margin: auto;
+            border-radius: 25px;
+            border: none;
+            font-weight: bold;
+            background: #ffffff;
+            color: rgb(0, 0, 0);
+            transition: .4s ease-in-out;
+        }
+
+        .card button:hover {
+            background: red;
+            color: white;
+            cursor: pointer;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 100px; /* Adjust as needed */
+        }
+
+        .card1 {
+            width: 300px;
+            height: 254px;
+            border-radius: 20px;
+            background: rgba(12, 43, 67, 0.5);
+            position: relative;
+            padding: 20px;
+            border: 2px solid #0c2b43;
+            overflow: visible;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            margin: 0 20px;
+        }
+
+        .card1-details {
+            color: white;
+            height: 100%;
+            gap: 8px;
+            display: grid;
+            place-content: center;
+        }
+
+        .card1-button {
+            transform: translate(-50%, 125%);
+            width: 180px;
+            border-radius: 20px;
+            border: none;
+            background-color: #008bf8;
+            color: #fff;
+            font-size: 16px;
+            padding: 10px 20px;
+            position: absolute;
+            left: 50%;
+            bottom: 20px;
+            opacity: 0;
+            transition: 0.3s ease-out;
+        }
+		
+		 .card1:hover .card1-button {
+            transform: translate(-50%, 50%);
+            opacity: 1;
+        }
+
+        .text1-body {
+            color: white;
+        }
+
+        .text1-title {
+            font-size: 40px;
+            font-weight: bold;
+			text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        }
+
+        .card1:hover {
+            border-color: #008bf8;
+            box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+        }
+		.card1 a:link {
+         color: white;
+          }
+
+
+        .card1 a:visited {
+            color: white;
+        }
+		
+		.card1 a {
+            text-decoration: none;
+        }
+		
+		.divider {
+          width: 90%; /* Adjust width as needed */
+          border: none;
+          border-top: 3px solid #2B8ABF; /* Divider color */
+          margin: 20px auto; /* Adjust margin as needed */
+        }
+		
+		 /* Footer */
+        .footer {
+            background-color: #0c2b43;
+            color: white;
+            padding:5px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+			z-index: 999;
+        }
+		
+		.card2 {
+  box-sizing: border-box;
+  width: 300px;
+  height: 150px;
+  margin: 50px auto;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+.card2 h1 {
+  font-size: 2em;
+  color: #6c757d;
+}
+
+.taglines2 {
+            margin-left: 10%;
+            padding-top: 5%;
+            color: #2F3A40;
+            max-width: 620px;
+            font-size: 20px;
+            text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
+        }
+		
+	</style>
+</head>
+<body>
+	<!--Universal HTML START-->
+	<div class="header"> <!--Header-->
+		<i class="fas fa-bars fa-lg" id="sidebar-toggle"></i> <!--Sidebar toggle icon-->
+		<a href="home.html" class="logo"><img src="images/logo full.png" width="60" height="50"></a> <!--Logo-->
+		<input type="text" placeholder="Search..."> <!--Search bar-->
+		<button type="submit"><i class="fa fa-search fa-lg"></i></button> <!--Search bar icon-->
+	</div>
+	<ul class="sidebar" id="sidebar"> <!--Sidebar-->
+		<li><a href="test.html"><i class="fas fa-home "></i>Home</a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i>Services</a></li>
+        <li><a href="shop.html"><i class="fas fa-shopping-basket"></i>Shop</a></li>
+        <li><a href="ABOUT.html"><i class="fas fa-users"></i>About Us</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i>Contact Us</a></li>
+	</ul>
+	<!--Universal HTML END-->
+	<div class="taglines">
+		<h1>Headline Lorem<br>ipsum dolor sit amet</h1>
+		<p>Tagline Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a dolor ac magna maximus tempus.</p>
+	</div>
+	<button class="learn">
+	<a href="ABOUT.html">
+		<i class="fa fa-arrow-right" id="arrowR" aria-hidden="true"></i>
+		<span class="text">Learn more</span>
+ 		<span class="circle"></span>
+		<i class="fa fa-arrow-right" id="arrowL" aria-hidden="true"></i>
+	</a>
+	</button>
+<h2 class="wordborder">Featured Products</h2>
+ <div class="card-container">	 
+     <div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+			 
+			  <div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+			 
+			 <div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+	    </div>
+</div>		
+<hr class = "divider">	
+<div class="taglines2">
+		<h1>Shop</h1>
+	</div>
+	
+	 <div class="card-container">	 
+     <div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+	
+	<div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+	
+	<div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+		</div>
+		
+		<div class="card-container">	 
+     <div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+	
+	<div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+	
+	<div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+		</div>
+		
+		<div class="card-container">	 
+     <div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+	
+	<div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+	
+	<div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text3-body">$200</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+		</div>
+<hr class = "divider">		
+	<div class="taglines2">
+		<h1>About Us</h1>
+	</div>
+	<div class="card-container">
+	<div class="card1">
+    <div class="card1-details">
+        <h2 class="text1-title">Hobby haven</h2>
+        <p class="text1-body">a dedicated space for model kit enthusiasts. We are a passionate community that celebrates the art of model building. Our site caters to hobbyists of all levels, from beginners taking their first steps into the world of model kits, to seasoned builders looking for their next challenge. </p>
+    </div>
+    
+</div>
+<div class="card1">
+    <div class="card1-details">
+        <h2 class="text1-title">What we do</h2>
+        <p class="text1-body">We offer a wide range of resources to fuel your passion. Explore our extensive collection of model kits spanning various categories - aircraft, ships, cars, trains, and even fictional characters. We source our kits from renowned manufacturers known for their quality and detail.</p>
+    </div>
+</div>
+<div class="card1">
+    <div class="card1-details">
+        <h2 class="text1-title">Join us</h2>
+        <p class="text1-body">Join our forums to connect with fellow enthusiasts. Share your latest builds, discuss techniques, or simply chat about your shared love for this creative hobby. We believe in fostering a supportive and inclusive environment where everyone can enjoy the art of model building.</p>
+    </div>
+	<button class="card1-button"><a href="https://www.facebook.com/">Join Discord</a></button>
+	</div>
+</div>
+</div>		
+	
+<hr class = "divider">	
+	</div>	
+	<div class="card2">
+  <h1>100% Proven and Tested</h1>
+</div>
+	<hr class = "divider">	
+	</div>
+	<div class="taglines2">
+		<h1>Meet the Creators</h1>
+	</div>
+	<div class="card-container">
+	  <div class="card">
+        <div class="img">
+		<img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/326117861_721179102728559_8471204143307483093_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEt9bHqefw8AFaDAzjCf_VeXZM1C9RCOhJdkzUL1EI6EiFTGojPCEWjJ7IFiNfRBvn4f-6Wzauru7gTdWIuBqpX&_nc_ohc=6kFTzJ6KcTsQ7kNvgG3ARqS&_nc_ht=scontent.fmnl25-4.fna&oh=00_AfBrFx2SI6OwlFcoxPFjJ9bdweE631H9pXE11XtlH24IIQ&oe=663CF107">
+		</div>
+		<span>Alaric A. Alcayin</span>
+        <p class="info">Web Developer</p>
+        <div class="share">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:your_email@example.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <button onclick="location.href='mailto:alcayinalaric@gmail.com?subject=The subject of the email&body=The body of the email'">contact me</button>
+    </div>
+	
+	  <div class="card">
+        <div class="img">
+		<img src="https://scontent.fmnl25-4.fna.fbcdn.net/v/t39.30808-6/398428364_1456219335219203_8419934855777839139_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeEnfPLVIRE7Ku8onSpMmK843CTTpn11Zy3cJNOmfXVnLfNI6YXi7sLNZjhQPrErkBzmDvQpTSRRrTtLUjhPt9Yi&_nc_ohc=3NvQ5obWwLcQ7kNvgHF_M-B&_nc_ht=scontent.fmnl25-4.fna&oh=00_AfC5dxNt2bOpmyPLkvxNG7MZGSz4vClyJDamYIzTBK3-7A&oe=663D374E">
+		</div>
+		<span>Elmond Jae Lalu Salvahan</span>
+        <p class="info">Web Developer</p>
+        <div class="share">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:your_email@example.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <button onclick="location.href='mailto:alcayinalaric@gmail.com">contact me</button>
+    </div>
+	
+	  <div class="card">
+        <div class="img">
+		<img src="https://scontent.fmnl25-3.fna.fbcdn.net/v/t39.30808-6/428091528_1439342893666578_7254142772662547836_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_eui2=AeHulonY9lWD82zCb4QvdPm37prv569G1cDumu_nr0bVwIKdYCBEp4tThZtj4V6xcltdVxeaikx1ivIInr8SmKn-&_nc_ohc=09B4tG7dQusQ7kNvgGVfHFl&_nc_ht=scontent.fmnl25-3.fna&oh=00_AfBKnabdYfwz-twtwo80pYG5ozwsgtvMhwDHRGwyDhXAXQ&oe=663D22AD">
+		</div>
+        <span>Gerome</span>
+		<p class="info">Web Developer</p>
+        <div class="share">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+            <a href="mailto:your_email@example.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <button onclick="location.href='mailto:alcayinalaric@gmail.com?subject=The subject of the email&body=The body of the email'">contact me</button>
+    </div>
+	
+	 <div class="footer">
+        <p>© 2024 HobbyHaven. All Rights Reserved.</p>
+        <!-- Add social media icons and footer links here -->
+    </div>
+	<script>
+		//Universal JS START
+		//Sidebar
+		let toggleSidebar = document.querySelector("#sidebar-toggle");
+		let sidebar = document.querySelector(".sidebar");
+
+		toggleSidebar.onclick = function(){
+			sidebar.classList.toggle("active");
+		}
+		//Universal JS END
+	</script>
+</body>
+</html>
