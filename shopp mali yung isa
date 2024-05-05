@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>webdes</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        /* Background Image */
+        body {  
+            width: 10%%;
+            height: 100vh;
+            background-color: #0c2b43;
+            background-image: url("https://images.alphacoders.com/134/1342705.png");
+            background-position: left top;
+            background-size: 120%;
+            background-repeat: no-repeat;
+            overflow: auto;
+			 background-attachment: fixed;
+        }
+        /* Header */
+        .header {
+            background-color: #0c2b43;
+            color: white;
+            padding: 10px 10px;
+            top: 0;
+            position: fixed;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Changed */
+            z-index: 999;
+        }
+
+        .header .left, .header .center, .header .right {
+            display: flex;
+            align-items: center;
+        }
+		.header .left a {
+         margin-right: 10px; /* Add some margin between the icons */
+        }
+
+        .header .center {
+            justify-content: center;
+            flex-grow: 1;
+        }
+
+        .input {
+            background-color: #212121;
+            width: 500px;
+            max-width: 500px; /* Adjusted size */
+            height: 40px;
+            padding: 10px;
+            border: 2px solid white;
+            border-radius: 5px;
+        }
+
+        .input:focus {
+            color: rgb(0, 255, 255);
+            background-color: #212121;
+            outline-color: rgb(0, 255, 255);
+            box-shadow: -3px -3px 15px rgb(0, 255, 255);
+            transition: .1s;
+            transition-property: box-shadow;
+        }
+
+        .sidebar {
+            list-style-type: none;
+            left: 0; /* Aligning sidebar to the left side */
+            top: 60px; /* Adjusting top position */
+            width: 200px;
+            height: 100%;
+            overflow: auto;
+            position: fixed;
+            background-color: #f1f1f1;
+            padding-top: 20px; /* Adjusted padding */
+            transition: width 0.5s; /* Adjusted */
+        }
+
+        .sidebar.minimized {
+            width: 50px; /* Adjust this value to match your desired minimized sidebar width */
+        }
+
+        .sidebar a span {
+            margin-left: 10px; /* Space between icon and text */
+            transition: opacity 0.5s; /* Transition for smooth fading */
+        }
+
+        .sidebar.minimized a span {
+            opacity: 0; /* Hide text when sidebar is minimized */
+        }
+
+        .main-content {
+            margin-top: 70px; /* Adjust according to your header height */
+            margin-bottom: 80px; /* Adjust according to your footer height */
+            padding: 20px;
+            padding-left: 220px; /* Adjusted padding to avoid touching the sidebar */
+            text-align: center;
+            overflow: hidden; /* Remove scroll bar */
+            transition: padding-left 0.5s; /* Adjusted */
+        }
+
+        .main-content.with-minimized-sidebar {
+            padding-left: 70px; /* Adjust this value to match your minimized sidebar width plus 20px */
+        }
+
+        li a {
+            display: block;
+            color: #000;
+            padding: 10px 16px;
+            text-decoration: none;
+        }
+
+        li a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        li a:hover:not(.active) {
+            background-color: #555;
+            color: white;
+        }
+
+        .taglines {
+            margin-left: 300px;
+            padding-top: 100px;
+            font-size: 30px;
+        }
+
+        /* Main Content Section */
+        .main-content {
+            margin-top: 50px; /* Adjust according to your header height */
+            margin-bottom: 70px; /* Adjust according to your footer height */
+            padding: 20px;
+            padding-left: 220px; /* Adjusted padding to avoid touching the sidebar */
+            text-align: center;
+            overflow: hidden; /* Remove scroll bar */
+            transition: padding-left 0.5s; /* Adjusted */
+        }
+
+        .card {
+            width: 300px;
+            height: 254px;
+            border-radius: 20px;
+            background: #0c2b43;
+            position: relative;
+            padding: 10px;
+            border: 2px solid #0c2b43;
+            transition: 0.5s ease-out;
+            overflow: visible;
+            margin-top: 10px; /* Added margin */
+        }
+
+        .card-details {
+            color: white;
+            height: 100%;
+            gap: 8px;
+            display: grid;
+            place-content: center;
+        }
+		
+		.card-container {
+    display: flex;
+    justify-content: center; /* Align cards in the center */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line if needed */
+    gap: 20px; /* Add some space between the cards */
+}
+
+        .card-button {
+    transform: translate(-50%, 125%);
+    width: 60%;
+    border-radius: 1rem;
+    border: none;
+    background-color: #008bf8;
+    color: #fff;
+    font-size: 1rem;
+    padding: 10px 20px; /* Changed padding to pixels */
+    position: absolute;
+    left: 50%;
+    bottom: 10px; /* Increased bottom padding */
+    opacity: 0;
+    transition: 0.3s ease-out;
+}
+
+        .text-body {
+            color: rgb(134, 134, 134);
+        }
+
+        /*Text*/
+        .text-title {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        /*Hover*/
+        .card:hover {
+            border-color: #008bf8;
+            box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+        }
+
+        .card:hover .card-button {
+            transform: translate(-50%, 50%);
+            opacity: 1;
+        }
+
+        /* Featured Products Border */
+        .featured-products {
+            border: 1px solid #004080;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #0c2b43;
+            color: white;
+            margin-top: 1px;
+            margin-bottom: 1px;
+            overflow: hidden;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #0c2b43;
+            color: white;
+            padding:5px 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="left">
+            <a href="#" id="sidebar-toggle"><i class="fas fa-bars fa-lg"></i></a>
+            <a href="home.html"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" width="100" height="auto"></a>
+        </div>
+        <div class="center">
+            <input type="text" placeholder="Search..." class="input">
+        </div>
+        <div class="right">
+            <div class="icons">
+                <a href="#"><i class="fas fa-shopping-cart fa-lg"></i></a>
+                <a href="#"><i class="fas fa-user fa-lg"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="sidebar" class="sidebar">
+        <ul>
+            <li><a href="test.html"><i class="fas fa-home"></i><span>Home</span></a></li>
+            <li><a href=""><i class="fas fa-cogs"></i><span>Services</span></a></li>
+            <li><a href="shop.html"><i class="fas fa-shopping-basket"></i><span>Shop</span></a></li>
+            <li><a href=""><i class="fas fa-users"></i><span>About Us</span></a></li>
+            <li><a href=""><i class="fas fa-envelope"></i><span>Contact Us</span></a></li>
+        </ul>
+    </div>
+
+ 
+<div id="main-content" class="main-content">
+    <h2 class="featured-products">Featured Products</h2>
+    
+    <div class="card-container">
+        <div class="card">
+            <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+            <div class="card-details">
+                <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                <p class="text-body">$200</p>
+                <button class="card-button">Add to Cart</button>
+            </div>
+        </div>
+        
+      <div class="card">
+            <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+            <div class="card-details">
+                <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                <p class="text-body">$200</p>
+                <button class="card-button">Add to Cart</button>
+            </div>
+        </div>
+		
+		 <div class="card">
+            <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+            <div class="card-details">
+                <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                <p class="text-body">$200</p>
+                <button class="card-button">Add to Cart</button>
+            </div>
+        </div>
+		
+    </div>
+</div>
+<div id="main-content" class="main-content">
+    <h2 class="featured-products">Shop</h2>
+	    <div class="card-container">
+
+        <div class="card">
+            <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+            <div class="card-details">
+                <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                <p class="text-body">$200</p>
+                <button class="card-button">Add to Cart</button>
+            </div>
+        </div>
+        
+      <div class="card">
+            <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+            <div class="card-details">
+                <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                <p class="text-body">$200</p>
+                <button class="card-button">Add to Cart</button>
+            </div>
+        </div>
+		
+		<div class="card">
+            <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+            <div class="card-details">
+                <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                <p class="text-body">$200</p>
+                <button class="card-button">Add to Cart</button>
+            </div>
+        </div>
+		
+		<div class="card">
+            <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+            <div class="card-details">
+                <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                <p class="text-body">$200</p>
+                <button class="card-button">Add to Cart</button>
+            </div>
+        </div>
+        
+        <div class="card">
+            <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+            <div class="card-details">
+                <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                <p class="text-body">$200</p>
+                <button class="card-button">Add to Cart</button>
+            </div>
+        </div>
+		
+		<div class="card">
+            <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+            <div class="card-details">
+                <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                <p class="text-body">$200</p>
+                <button class="card-button">Add to Cart</button>
+            </div>
+        </div>
+		
+	 	<div class="card">
+                    <img src="https://static.wikia.nocookie.net/gunplabuilders/images/2/2a/RG_Aile_Strike_Gundam_boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170603121814" alt="Product Image" style="width:100%">
+                   <div class="card-details">
+                   <h2 class="text-title">(RG) GAT-X105+AQM/E-X01 Aile Strike Gundam</h2>
+                   <p class="text-body">$500</p>
+                   <button class="card-button">Add to Cart</button>
+                   </div>
+           </div>
+        
+        <div class="card">
+            <div class="card-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+                 <div class="card-details">
+                    <h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+                    <p class="text-body">$200</p>
+                    <button class="card-button">Add to Cart</button>
+                 </div>	
+             </div>
+	    </div>
+	</div>
+	
+    <div class="footer">
+        <p>© 2024 Your Company. All Rights Reserved.</p>
+        <!-- Add social media icons and footer links here -->
+    </div>
+    <script>
+        document.getElementById('sidebar-toggle').addEventListener('click', function() {
+            var sidebar = document.getElementById('sidebar');
+            var mainContent = document.getElementById('main-content');
+
+            if (sidebar.classList.contains('minimized')) {
+            // If sidebar is minimized, maximize it
+            sidebar.classList.remove('minimized');
+            mainContent.classList.remove('with-minimized-sidebar');
+        } else {
+            // If sidebar is maximized, minimize it
+            sidebar.classList.add('minimized');
+            mainContent.classList.add('with-minimized-sidebar');
+        }
+    });
+</script>
+</body>
+</html>
+
