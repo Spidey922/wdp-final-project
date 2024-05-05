@@ -88,6 +88,7 @@
 			overflow-x: hidden;
 			padding-top: 54px;
 			transition: 0.5s;
+			z-index: 998;
 		} 
 		/*Sidebar when open*/
 		.sidebar.active{
@@ -136,7 +137,8 @@
 			color: #2F3A40;
 			max-width: 620px;
 			font-size: 20px;
-			text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;  
+			text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; 
+			cursor: default;
 		}
 		/*Headline only*/
 		.taglines h1 {
@@ -233,6 +235,26 @@
   			height: 220px;
   			opacity: 1;
 		}
+
+		hr {
+			margin-top: 15%;
+			margin-left: auto;
+			margin-right: auto;
+			width: 80%;
+			border: 1px solid #0c2b43;
+		}
+
+		.textbox {
+			margin: 5% auto;
+			width: 70%;
+            border: 1px solid #004080;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #0c2b43;
+            color: #f1f1f1;
+			text-align: center;
+            overflow: hidden;
+        }
 	</style>
 </head>
 <body>
@@ -255,12 +277,15 @@
 		<h1>Headline Lorem<br>ipsum dolor sit amet</h1>
 		<p>Tagline Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a dolor ac magna maximus tempus.</p>
 	</div>
-	<button class="learn">
+	<button class="learn" onclick="document.location=''"> <!--link to services-->
 		<i class="fa fa-arrow-right" id="arrowR" aria-hidden="true"></i>
 		<span class="text">Learn more</span>
  		<span class="circle"></span>
 		<i class="fa fa-arrow-right" id="arrowL" aria-hidden="true"></i>
 	</button>
+	<hr>
+	<h2 class="textbox">Featured Products</h2>
+	<hr>
 	<script>
 		//Universal JS START
 		//Sidebar
