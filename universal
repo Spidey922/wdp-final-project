@@ -65,6 +65,7 @@
 			overflow-x: hidden;
 			padding-top: 54px;
 			transition: 0.5s;
+			z-index: 998;
 		} 
 		/*Sidebar when open*/
 		.sidebar.active{
@@ -108,13 +109,13 @@
 		/*Universal CSS END*/
 
 	<!--Universal HTML START-->
-	<div class="header">
-		<i class="fas fa-bars fa-lg" id="sidebar-toggle"></i>
-		<a href="home.html" class="logo"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" width="100" height="auto"></a> 
-		<input type="text" placeholder="Search...">
-		<button type="submit"><i class="fa fa-search fa-lg"></i></button>
+	<div class="header"> <!--Header-->
+		<i class="fas fa-bars fa-lg" id="sidebar-toggle"></i> <!--Sidebar toggle icon-->
+		<a href="home.html" class="logo"><img src="images/logo full.png" width="60" height="50"></a> <!--Logo-->
+		<input type="text" placeholder="Search..."> <!--Search bar-->
+		<button type="submit"><i class="fa fa-search fa-lg"></i></button> <!--Search bar icon-->
 	</div>
-	<ul class="sidebar" id="sidebar">
+	<ul class="sidebar" id="sidebar"> <!--Sidebar-->
 		<li><a href="home.html"><i class="fas fa-home "></i>Home</a></li>
         <li><a href="#"><i class="fas fa-cogs"></i>Services</a></li>
         <li><a href="#"><i class="fas fa-shopping-basket"></i>Shop</a></li>
@@ -122,8 +123,9 @@
         <li><a href="#"><i class="fas fa-envelope"></i>Contact Us</a></li>
 	</ul>
 	<!--Universal HTML END-->
-  
-  		//Universal JS START
+
+		//Universal JS START
+		//Sidebar
 		let toggleSidebar = document.querySelector("#sidebar-toggle");
 		let sidebar = document.querySelector(".sidebar");
 
