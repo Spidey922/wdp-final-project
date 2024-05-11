@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Hobby Haven | Headline</title>
+	<title>Hobby Haven - Where figures come to life</title>
 	<link rel="icon" href="images/logo min.ico">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<style>
@@ -10,7 +10,7 @@
 			margin: 0;
 			padding: 0;
 		}
-		/*Background Image*/
+		/*Background Image and Font*/
 		body{
 			overflow-x: hidden;
 			width: 100%;
@@ -20,6 +20,7 @@
 			background-position: left top;
 			background-size: 120%;
 			background-repeat: no-repeat;
+			font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 		}
 		/*Universal CSS START*/
 		/*Header*/
@@ -129,13 +130,102 @@
 			background-color: #555;
 			color: #f1f1f1;
 		}
+		/*Footer*/
+		.footer{
+			background-color: #07171e;
+			padding: 70px 0;
+			margin-top: 5%;
+		}
+		/*Footer container*/
+		.footer-cont{
+			max-width: 1170px;
+			margin: auto;
+		}
+		/*Footer row*/
+		.footer-row{
+			display: flex;
+		}
+		/*Footer column*/
+		.footer-col{
+			width: 25%;
+			padding: 0 15px;
+		}
+		/*Footer categories*/
+		.footer-col h4{
+			font-size: 18px;
+			color: #f1f1f1;
+			text-transform: capitalize;
+			margin-bottom: 35px;
+			font-weight: bold;
+			position: relative;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+		/*Footer categories line*/
+		.footer-col h4::before{
+			content: ' ';
+			position: absolute;
+			left: 0;
+			bottom: -10px;
+			background-color: #7fc3e1;
+			height: 2px;
+			box-sizing: border-box;
+			width: 80px;
+		}
+		/*Footer lists*/
+		.footer ul{
+			list-style: none;
+		}
+		/*Footer except Follow Us*/
+		.footer-col ul li:not(:last-child){
+			margin-bottom: 10px;
+		}
+		/*Footer links*/
+		.footer-col ul li a{
+			font-size: 16px;
+			text-transform: capitalize;
+			text-decoration: none;
+			font-weight: bold;
+			color: #bbbbbb;
+			display: inline-block;
+			transition: all 0.3s ease;
+		}
+		/*Footer links when hovering*/
+		.footer-col ul li a:hover{
+			color: #f1f1f1;
+			padding-left: 8px;
+		}
+		/*Footer social links*/
+		.footer-col .socials a{
+			color: #bbbbbb;
+			display:inline-flex;
+			margin: 0 10px 10px 0;
+			transition: all 0.5s ease;
+			text-decoration: none;
+			align-items: center;
+		}
+		/*Footer social links when hovering*/
+		.footer-col .socials a:hover{
+			color: #f1f1f1;
+		}
+		/*Footer social link icons*/
+		.footer-col .socials a i{
+			min-width: 50px;
+		}
+		/*Second Footer*/
+		.footer2{
+			background-color: #0b242e;
+			color: #f1f1f1;
+			padding: 20px 0;
+			text-align: center;
+		}
 		/*Universal CSS END*/
 		/*Headline and Tagline*/
 		.taglines{
+			font-family: Verdana, Geneva, Tahoma, sans-serif;
 			margin-left: 10%;
 			padding-top: 15%;
 			color: #2F3A40;
-			max-width: 620px;
+			max-width: 550px;
 			font-size: 20px;
 			text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white; 
 			cursor: default;
@@ -144,6 +234,7 @@
 		.taglines h1 {
 			font-size: 70px;
 			margin-bottom: 25px;
+			font-family: 'Arial Black';
 		}
 		/*Learn more button*/
 		.learn {
@@ -238,15 +329,16 @@
 
 		hr {
 			margin-top: 15%;
-			margin-left: auto;
+			margin-left: 5%;
 			margin-right: auto;
-			width: 80%;
+			width: 93%;
 			border: 1px solid #0c2b43;
 		}
 
 		.textbox {
-			margin: 5% auto;
-			width: 70%;
+			margin-top: 3%;
+			margin-left: 9%;
+			width: 83%;
             border: 1px solid #004080;
             border-radius: 5px;
             padding: 10px;
@@ -255,37 +347,88 @@
 			text-align: center;
             overflow: hidden;
         }
+
+		.card-cont{
+			display: flex;
+            justify-content: center;
+            margin-top: 100px;
+		}
 	</style>
 </head>
 <body>
 	<!--Universal HTML START-->
 	<div class="header"> <!--Header-->
 		<i class="fas fa-bars fa-lg" id="sidebar-toggle"></i> <!--Sidebar toggle icon-->
-		<a href="home.html" class="logo"><img src="images/logo full.png" width="60" height="50"></a> <!--Logo-->
+		<a href="home.html" class="logo"><img src="images/logo full2.png" width="120" height="auto"></a> <!--Logo-->
 		<input type="text" placeholder="Search..."> <!--Search bar-->
-		<button type="submit"><i class="fa fa-search fa-lg"></i></button> <!--Search bar icon-->
+		<button type="submit"><i class="fas fa-search fa-lg"></i></button> <!--Search bar icon-->
 	</div>
 	<ul class="sidebar" id="sidebar"> <!--Sidebar-->
 		<li><a href="home.html"><i class="fas fa-home "></i>Home</a></li>
-        <li><a href="#"><i class="fas fa-cogs"></i>Services</a></li>
-        <li><a href="#"><i class="fas fa-shopping-basket"></i>Shop</a></li>
+        <li><a href="home.html#services"><i class="fas fa-cogs"></i>Services</a></li>
+        <li><a href="shop.html"><i class="fas fa-shopping-basket"></i>Shop</a></li>
         <li><a href="#"><i class="fas fa-users"></i>About Us</a></li>
         <li><a href="#"><i class="fas fa-envelope"></i>Contact Us</a></li>
 	</ul>
 	<!--Universal HTML END-->
 	<div class="taglines">
-		<h1>Headline Lorem<br>ipsum dolor sit amet</h1>
-		<p>Tagline Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a dolor ac magna maximus tempus.</p>
+		<h1>Unleash your inner builder</h1>
+		<p>Hobby Haven can provide you with all sorts of model kits that you can think of!</p>
 	</div>
-	<button class="learn" onclick="document.location=''"> <!--link to services-->
-		<i class="fa fa-arrow-right" id="arrowR" aria-hidden="true"></i>
+	<button class="learn" onclick="document.location='home.html#services'">
+		<i class="fas fa-arrow-right" id="arrowR"></i>
 		<span class="text">Learn more</span>
  		<span class="circle"></span>
-		<i class="fa fa-arrow-right" id="arrowL" aria-hidden="true"></i>
+		<i class="fas fa-arrow-right" id="arrowL"></i>
 	</button>
-	<hr>
-	<h2 class="textbox">Featured Products</h2>
-	<hr>
+	<hr><h2 class="textbox">Featured Products</h2>
+	<section id="services">
+		<hr><h2 class="textbox">Services</h2>
+		<div class="card-cont">
+			<div class="card-about">
+				
+			</div>
+		</div>
+	</section>
+	<!--Universal HTML Footer START-->
+	<footer class="footer">
+		<div class="footer-cont">
+			<div class="footer-row">
+				<div class="footer-col">
+					<h4>Hobby Haven</h4>
+					<ul>
+						<li><a href="#">About Us</a></li>
+						<li><a href="#">Services</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Shop</h4>
+					<ul>
+						<li><a href="#">Model Kits</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Support</h4>
+					<ul>
+						<li><a href="#">Contact Us</a></li>
+						<li><a href="#">Newsletter</a></li>
+					</ul>
+				</div>
+				<div class="footer-col">
+					<h4>Follow Us</h4>
+					<div class="socials">
+						<a href="#"><i class="fab fa-facebook fa-2x"></i>Alaric Alcayin</a>
+						<a href="#"><i class="fab fa-facebook fa-2x"></i>Elmond Jae Salvahan</a>
+						<a href="#"><i class="fab fa-facebook fa-2x"></i>Gerome Angelo Ortega</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<footer class="footer2">
+		<p>© 2024, Hobby Haven. All Rights Reserved.</p>
+	</footer>
+	<!--Universal HTML Footer END-->
 	<script>
 		//Universal JS START
 		//Sidebar
