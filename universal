@@ -207,8 +207,8 @@
 		<li><a href="home.html"><i class="fas fa-home "></i>Home</a></li>
         <li><a href="home.html#services"><i class="fas fa-cogs"></i>Services</a></li>
         <li><a href="shop.html"><i class="fas fa-shopping-basket"></i>Shop</a></li>
-        <li><a href="#"><i class="fas fa-users"></i>About Us</a></li>
-        <li><a href="#"><i class="fas fa-envelope"></i>Contact Us</a></li>
+        <li><a href="about.html"><i class="fas fa-users"></i>About Us</a></li>
+        <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact Us</a></li>
 	</ul>
 	<!--Universal HTML END-->
 
@@ -219,29 +219,29 @@
 				<div class="footer-col">
 					<h4>Hobby Haven</h4>
 					<ul>
-						<li><a href="#">About Us</a></li>
-						<li><a href="#">Services</a></li>
+						<li><a href="about.html">About Us</a></li>
+						<li><a href="home.html#services">Services</a></li>
 					</ul>
 				</div>
 				<div class="footer-col">
 					<h4>Shop</h4>
 					<ul>
-						<li><a href="#">Model Kits</a></li>
+						<li><a href="shop.html">Model Kits</a></li>
 					</ul>
 				</div>
 				<div class="footer-col">
 					<h4>Support</h4>
 					<ul>
-						<li><a href="#">Contact Us</a></li>
-						<li><a href="#">Newsletter</a></li>
+						<li><a href="contact.html">Contact Us</a></li>
+						<li><a href="home.html#newsletter	">Newsletter</a></li>
 					</ul>
 				</div>
 				<div class="footer-col">
 					<h4>Follow Us</h4>
 					<div class="socials">
-						<a href="#"><i class="fab fa-facebook fa-2x"></i>Alaric Alcayin</a>
-						<a href="#"><i class="fab fa-facebook fa-2x"></i>Elmond Jae Salvahan</a>
-						<a href="#"><i class="fab fa-facebook fa-2x"></i>Gerome Angelo Ortega</a>
+						<a href="https://www.facebook.com/alcayin.alaric?mibextid=ZbWKwL"><i class="fab fa-facebook fa-2x"></i>Alaric Alcayin</a>
+						<a href="https://www.facebook.com/Spiderrific1?mibextid=ZbWKwL"><i class="fab fa-facebook fa-2x"></i>Elmond Jae Salvahan</a>
+						<a href="https://www.facebook.com/GeromeOrtega.15?mibextid=ZbWKwL"><i class="fab fa-facebook fa-2x"></i>Gerome Angelo Ortega</a>
 					</div>
 				</div>
 			</div>
