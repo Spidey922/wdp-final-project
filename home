@@ -240,6 +240,7 @@
 		.learn {
 			margin-left: 10%;
 			margin-top: 2%;
+			margin-bottom: 15%;
 			position: relative;
   			display: flex;
   			align-items: center;
@@ -326,15 +327,15 @@
   			height: 220px;
   			opacity: 1;
 		}
-
+		/*Horizontal lines*/
 		hr {
-			margin-top: 15%;
+			margin-top: 10%;
 			margin-left: 5%;
 			margin-right: auto;
 			width: 93%;
 			border: 1px solid #0c2b43;
 		}
-
+		/*The boxes with text in them*/
 		.textbox {
 			margin-top: 3%;
 			margin-left: 9%;
@@ -352,7 +353,65 @@
 			display: flex;
             justify-content: center;
             margin-top: 100px;
+			margin-left: 2%;
 		}
+
+		.products{
+            width: 300px;
+            height: 254px;
+            border-radius: 20px;
+            background: rgba(12, 43, 67,0.5);
+            position: relative;
+            padding: 10px;
+			border: 3px solid #0c2b43;
+            transition: 0.5s ease-out;
+            overflow: visible;
+            margin-top: 10px;
+			margin: 0 20px;
+        }
+
+		.product-details{
+            color: white;
+            height: 100%;
+            gap: 2px;
+            display: grid;
+            place-content: center;
+        }
+
+		.product-button {
+			transform: translate(-50%, 125%);
+			width: 60%;
+			border-radius: 1rem;
+			border: none;
+			background-color: #008bf8;
+			color: #fff;
+			font-size: 1rem;
+			padding: 10px 20px; 
+			position: absolute;
+			left: 50%;
+			bottom: 10px; 
+			opacity: 0;
+			transition: 0.3s ease-out;
+			cursor: pointer;
+		}
+
+		.products:hover {
+            border-color: #00FFFF;    
+        }
+
+		.products:hover .product-button {
+            transform: translate(-50%, 50%);
+            opacity: 1;
+        }
+
+		.product-body {
+            color: white;
+        }
+
+		.product-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
 	</style>
 </head>
 <body>
@@ -365,7 +424,7 @@
 	</div>
 	<ul class="sidebar" id="sidebar"> <!--Sidebar-->
 		<li><a href="home.html"><i class="fas fa-home "></i>Home</a></li>
-        <li><a href="home.html#services"><i class="fas fa-cogs"></i>Services</a></li>
+        <li><a href="#services"><i class="fas fa-cogs"></i>Services</a></li>
         <li><a href="shop.html"><i class="fas fa-shopping-basket"></i>Shop</a></li>
         <li><a href="about.html"><i class="fas fa-users"></i>About Us</a></li>
         <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact Us</a></li>
@@ -375,13 +434,42 @@
 		<h1>Unleash your inner builder</h1>
 		<p>Hobby Haven can provide you with all sorts of model kits that you can think of!</p>
 	</div>
-	<button class="learn" onclick="document.location='home.html#services'">
+	<button class="learn" onclick="document.location='#services'">
 		<i class="fas fa-arrow-right" id="arrowR"></i>
 		<span class="text">Learn more</span>
  		<span class="circle"></span>
 		<i class="fas fa-arrow-right" id="arrowL"></i>
 	</button>
-	<hr><h2 class="textbox">Featured Products</h2>
+	<section id="featured">
+		<hr><h2 class="textbox">Featured Products</h2>
+		<div class="card-cont">	 
+			<div class="products">
+				<div class="product-details">
+					<img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
+					<h2 class="product-title">(RG) RX-78-2 Gundam</h2>
+					<p class="product-body">$25</p>
+					<button class="product-button" onclick="document.location='shop.html'">Shop Now</button>
+				</div>	
+			</div>
+			<div class="products">
+				<div class="product-details">
+					<img src="https://static.wikia.nocookie.net/gundam/images/a/a3/Ms-06s-rg-box.jpg/revision/latest/scale-to-width-down/1000?cb=20111001094727" alt="Product Image" style="width:100%">
+					<h2 class="product-title">(RG)MS-06S Zaku II</h2>
+					<p class="product-body">$20</p>
+					<button class="product-button" onclick="document.location='shop.html'">Shop Now</button>
+				</div>	
+			</div>
+					
+			<div class="products">
+				<div class="product-details">
+					<img src="https://static.wikia.nocookie.net/gundam/images/5/5e/Rg_aile_strike.jpg/revision/latest/scale-to-width-down/1000?cb=20111016193301" alt="Product Image" style="width:100%">
+					<h2 class="product-title">(RG)GAT-X105+AQM/E-X01 Aile Strike</h2>
+					<p class="product-body">$40</p>
+					<button class="product-button" onclick="document.location='shop.html'">Shop Now</button>
+				</div>	
+			</div>
+		</div>
+	</section>
 	<section id="services">
 		<hr><h2 class="textbox">Services</h2>
 		<div class="card-cont">
@@ -398,7 +486,7 @@
 					<h4>Hobby Haven</h4>
 					<ul>
 						<li><a href="about.html">About Us</a></li>
-						<li><a href="home.html#services">Services</a></li>
+						<li><a href="#services">Services</a></li>
 					</ul>
 				</div>
 				<div class="footer-col">
@@ -411,7 +499,7 @@
 					<h4>Support</h4>
 					<ul>
 						<li><a href="contact.html">Contact Us</a></li>
-						<li><a href="home.html#newsletter	">Newsletter</a></li>
+						<li><a href="#newsletter">Newsletter</a></li>
 					</ul>
 				</div>
 				<div class="footer-col">
@@ -439,6 +527,14 @@
 			sidebar.classList.toggle("active");
 		}
 		//Universal JS END
+		document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    	anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'});
+    		});
+		});
 	</script>
 </body>
 </html>
