@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Hobby Haven | Shop</title>
+	<title>Hobby Haven | Headline</title>
 	<link rel="icon" href="images/logo min.ico">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 	<style>
@@ -129,6 +129,7 @@
 			background-color: #555;
 			color: #f1f1f1;
 		}
+		
 		/*Footer*/
 		.footer{
 			background-color: #07171e;
@@ -217,6 +218,7 @@
 			padding: 20px 0;
 			text-align: center;
 		}
+		
 		/*Universal CSS END*/
 		/*Headline and Tagline*/
 		.taglines{
@@ -444,6 +446,7 @@
 			Border: 2px solid #00FFFF;
 			background:#0c2b43;
 			display: none;
+			z-index:999;
 		}
 
 		.sucess-title {
@@ -492,9 +495,9 @@
 	<!--Universal HTML START-->
 	<div class="header"> <!--Header-->
 		<i class="fas fa-bars fa-lg" id="sidebar-toggle"></i> <!--Sidebar toggle icon-->
-		<a href="home.html" class="logo"><img src="images/logo full2.png" width="120" height="auto"></a> <!--Logo-->
-		<input type="text" placeholder="Search..."> <!--Search bar-->
-		<button type="submit"><i class="fas fa-search fa-lg"></i></button> <!--Search bar icon-->
+		<a href="home.html" class="logo"><img src="images/logo full.png" width="60" height="50"></a> <!--Logo-->
+		<input type="text" id="searchInput" placeholder="Search..."> <!--Search bar-->
+		<button type="submit"><i class="fa fa-search fa-lg"></i></button> <!--Search bar icon-->
 		
 		<div id="cart-icon">
             <i class="fas fa-shopping-cart"></i>
@@ -515,10 +518,10 @@
 	
 	<ul class="sidebar" id="sidebar"> <!--Sidebar-->
 		<li><a href="home.html"><i class="fas fa-home "></i>Home</a></li>
-        <li><a href="home.html#services"><i class="fas fa-cogs"></i>Services</a></li>
-        <li><a href="shop.html"><i class="fas fa-shopping-basket"></i>Shop</a></li>
-        <li><a href="about.html"><i class="fas fa-users"></i>About Us</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact Us</a></li>
+        <li><a href="#"><i class="fas fa-cogs"></i>Services</a></li>
+        <li><a href="#"><i class="fas fa-shopping-basket"></i>Shop</a></li>
+        <li><a href="#"><i class="fas fa-users"></i>About Us</a></li>
+        <li><a href="#"><i class="fas fa-envelope"></i>Contact Us</a></li>
 	</ul>
 	<!--Universal HTML END-->
 	<div class="taglines2"><h1>Featured Products</h1></div>
@@ -658,7 +661,8 @@
   <p class="sucess-des">your package has been sealed please go to our shop to retrive package</p>
     <button class="continue-button">continue</button>
 </div>
-	<!--Universal HTML Footer START-->
+
+<!--Universal HTML Footer START-->
 	<footer class="footer">
 		<div class="footer-cont">
 			<div class="footer-row">
@@ -697,6 +701,7 @@
 		<p>© 2024, Hobby Haven. All Rights Reserved.</p>
 	</footer>
 	<!--Universal HTML Footer END-->
+</body>
 <script>
 		//Universal JS START
 		//Sidebar
