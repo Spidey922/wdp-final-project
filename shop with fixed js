@@ -557,11 +557,41 @@
 		
 
 <hr class = "divider">	
+<div class="taglines2"><h1>New Arrivals</h1></div>
+ <div class="card-container">	 
+     <div class="card3">
+            <div class="card3-details">
+			<section id = "RX">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/b/b5/RG-Force-Impulse-Gundam-Spec-II-box.jpg/revision/latest/scale-to-width-down/1000?cb=20240126101549" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG)Force Impulse Gundam Spec II</h2>
+                    <p class="text3-body">$25</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+			</section>
+			  <div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/2/26/Rg_zeta_boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170918222111" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG) MSZ-006 Zeta Gundam</h2>
+                    <p class="text3-body">$20</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+			 
+			 <div class="card3">
+            <div class="card3-details">
+                 <img src="https://static.wikia.nocookie.net/gunplabuilders/images/c/c1/RG_Gundam_MK-II_%28AEUG%29_boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170623083723" alt="Product Image" style="width:100%">
+                    <h2 class="text3-title">(RG)RX-178 Gundam Mk-II</h2>
+                    <p class="text3-body">$40</p>
+                    <button class="card3-button">Add to Cart</button>
+                 </div>	
+             </div>
+	    </div>
+		
 
+<hr class = "divider">	
 <section id ="shop">
-<div class="taglines2">
-		<h1>Shop</h1>
-	</div>
+<div class="taglines2"><h1>Shop</h1></div>
 	
 	 <div class="card-container">	 
      <div class="card3">
@@ -597,7 +627,7 @@
             <div class="card3-details">
                  <img src="https://static.wikia.nocookie.net/gundam/images/d/d3/RG_00_Raiser_Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20150319011953" alt="Product Image" style="width:100%">
                     <h2 class="text3-title">(RG)00 Raiser</h2>
-                    <p class="text3-body">$200</p>
+                    <p class="text3-body">$2a0</p>
                     <button class="card3-button">Add to Cart</button>
                  </div>	
              </div>
@@ -606,7 +636,7 @@
             <div class="card3-details">
                  <img src="https://static.wikia.nocookie.net/gundam/images/9/9d/RG_Gundam_Astray_Red_Frame.jpg/revision/latest/scale-to-width-down/1000?cb=20150707010407" alt="Product Image" style="width:100%">
                     <h2 class="text3-title">(RG)Gundam Astray Red Frame</h2>
-                    <p class="text3-body">$200</p>
+                    <p class="text3-body">$20</p>
                     <button class="card3-button">Add to Cart</button>
                  </div>	
              </div>
@@ -615,7 +645,7 @@
             <div class="card3-details">
                  <img src="https://static.wikia.nocookie.net/gundam/images/4/48/RG_Sinanju.jpg/revision/latest?cb=20160802102503" alt="Product Image" style="width:100%">
                     <h2 class="text3-title">(RG) MSN-06S Sinanju</h2>
-                    <p class="text3-body">$200</p>
+                    <p class="text3-body">$20</p>
                     <button class="card3-button">Add to Cart</button>
                  </div>	
              </div>
@@ -626,7 +656,7 @@
             <div class="card3-details">
                  <img src="https://static.wikia.nocookie.net/gundam/images/5/56/RG_Gundam_Astray_Gold_Frame_Amatsu_Mina.jpg/revision/latest/scale-to-width-down/1000?cb=20170307105109" alt="Product Image" style="width:100%">
                     <h2 class="text3-title">(RG)Gundam Astray Gold Frame</h2>
-                    <p class="text3-body">$200</p>
+                    <p class="text3-body">$20</p>
                     <button class="card3-button">Add to Cart</button>
                  </div>	
              </div>
@@ -635,7 +665,7 @@
             <div class="card3-details">
                  <img src="https://static.wikia.nocookie.net/gundam/images/1/15/RGUnicornGundam.jpg/revision/latest/scale-to-width-down/1000?cb=20170801031350" alt="Product Image" style="width:100%">
                     <h2 class="text3-title">(RG) RX-0 Unicorn Gundam</h2>
-                    <p class="text3-body">$200</p>
+                    <p class="text3-body">$20</p>
                     <button class="card3-button">Add to Cart</button>
                  </div>	
              </div>
@@ -644,7 +674,7 @@
             <div class="card3-details">
                  <img src="https://static.wikia.nocookie.net/gundam/images/f/f9/RG_Gundam_Epyon.jpeg/revision/latest/scale-to-width-down/1000?cb=20230927044925" alt="Product Image" style="width:100%">
                     <h2 class="text3-title">(RG) OZ-13MS Gundam Epyon</h2>
-                    <p class="text3-body">$200</p>
+                    <p class="text3-body">$20</p>
                     <button class="card3-button">Add to Cart</button>
                  </div>	
              </div>
