@@ -795,24 +795,28 @@
 		}
 
 		// Function to update the cart display
-		function updateCartDisplay() {
-			const cartCount = document.getElementById('cart-count');
-			cartCount.textContent = cart.length;
+function updateCartDisplay() {
+    // Calculate the total quantity of all items in the cart
+    const totalQuantity = cart.reduce((total, product) => total + product.quantity, 0);
 
-			const cartList = document.getElementById('cart-list');
-			cartList.innerHTML = '';
-			cart.forEach((product, index) => {
-				const listItem = createCartItem(product, index);
-				cartList.appendChild(listItem);
-			});
+    const cartCount = document.getElementById('cart-count');
+    cartCount.textContent = totalQuantity; // Display the total quantity
 
-			const totalItems = document.getElementById('total-items');
-			totalItems.textContent = cart.length;
+    const cartList = document.getElementById('cart-list');
+    cartList.innerHTML = '';
+    cart.forEach((product, index) => {
+        const listItem = createCartItem(product, index);
+        cartList.appendChild(listItem);
+    });
 
-			const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
-			const totalPriceDisplay = document.getElementById('total-price');
-			totalPriceDisplay.textContent = '$' + totalPrice.toFixed(2);
-		}
+    const totalItems = document.getElementById('total-items');
+    totalItems.textContent = totalQuantity; // Display the total quantity
+
+    const totalPrice = cart.reduce((total, product) => total + product.price * product.quantity, 0);
+    const totalPriceDisplay = document.getElementById('total-price');
+    totalPriceDisplay.textContent = '$' + totalPrice.toFixed(2);
+}
+
 
 		// Attach click event listeners to Add to Cart buttons
 		addToCartButtons.forEach(button => {
