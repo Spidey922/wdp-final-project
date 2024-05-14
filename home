@@ -130,6 +130,12 @@
 			background-color: #555;
 			color: #f1f1f1;
 		}
+		/*Sidebar sign in button*/
+		.sidebar .profile{
+			position: relative;
+			color: #000;
+			top: 200px;
+		}
 		/*Footer*/
 		.footer{
 			background-color: #07171e;
@@ -527,6 +533,9 @@
         <li><a href="shop.html"><i class="fas fa-shopping-basket"></i>Shop</a></li>
         <li><a href="about.html"><i class="fas fa-users"></i>About Us</a></li>
         <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact Us</a></li>
+		<div class="profile">
+			<a href="login.html"><i class="fas fa-user-circle"></i>Sign In</a>
+		</div>
 	</ul>
 	<!--Universal HTML END-->
 	<div class="taglines">
@@ -539,7 +548,7 @@
  		<span class="circle"></span>
 		<i class="fas fa-arrow-right" id="arrowL"></i>
 	</button>
-	<section id="featured">
+	<section id="featured"> <!--Featured products-->
 		<hr><h2 class="textbox">Featured Products</h2>
 		<div class="card-cont">	 
 			<div class="products">
@@ -569,7 +578,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="services">
+	<section id="services"> <!--Services-->
 		<hr><h2 class="textbox">Services</h2>
 		<div class="services-box">
 			<div class="services-logo">
@@ -602,7 +611,7 @@
 			</div>
 		</div>
 	</section>
-	<section id="newsletter">
+	<section id="newsletter"><hr> <!--Newsletter-->
 		<form>
 			<div class="news-cont">
 				<div class="news-det">
