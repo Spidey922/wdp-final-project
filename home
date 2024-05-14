@@ -101,7 +101,7 @@
 			cursor: pointer;
 			position: absolute;
 			display: flex;
-			padding: 20px 20px 20px 20px;
+			padding: 20px;
 			transform: translateX(-33%);
 		}
 		/*Sidebar toggle when hovering*/
@@ -356,21 +356,7 @@
 			margin-left: 2%;
 		}
 
-		.products{
-            width: 300px;
-            height: 254px;
-            border-radius: 20px;
-            background: rgba(12, 43, 67,0.5);
-            position: relative;
-            padding: 10px;
-			border: 3px solid #0c2b43;
-            transition: 0.5s ease-out;
-            overflow: visible;
-            margin-top: 10px;
-			margin: 0 20px;
-        }
-
-		.product-details{
+		.text-details{
             color: white;
             height: 100%;
             gap: 2px;
@@ -378,13 +364,13 @@
             place-content: center;
         }
 
-		.product-button {
+		.text-button {
 			transform: translate(-50%, 125%);
 			width: 60%;
 			border-radius: 1rem;
 			border: none;
 			background-color: #008bf8;
-			color: #fff;
+			color: #f1f1f1;
 			font-size: 1rem;
 			padding: 10px 20px; 
 			position: absolute;
@@ -395,23 +381,136 @@
 			cursor: pointer;
 		}
 
+		.text-body {
+            color: #f1f1f1;
+        }
+
+		.text-title {
+            font-size: 22px;
+            font-weight: bold;
+        }
+		/*Featured Products*/
+		.products{
+            width: 300px;
+            height: 254px;
+            border-radius: 20px;
+            background: rgba(12, 43, 67,0.5);
+            position: relative;
+            padding: 10px;
+			border: 3px solid #0c2b43;
+            transition: 0.5s ease-out;
+            margin-top: 10px;
+			margin: 0 20px;
+        }
+
 		.products:hover {
             border-color: #00FFFF;    
         }
 
-		.products:hover .product-button {
+		.products:hover .text-button {
             transform: translate(-50%, 50%);
             opacity: 1;
         }
 
-		.product-body {
-            color: white;
+		/*Services*/
+		.services{
+            width: 300px;
+            height: 130px;
+            border-radius: 20px;
+            background: rgba(12, 43, 67, 0.5);
+            position: relative;
+            padding: 10px;
+            border: 2px solid #0c2b43;
+            margin: 0 20px;
+			text-align: center;
+			justify-content: center;
         }
 
-		.product-title {
-            font-size: 22px;
-            font-weight: bold;
+		.services-box{
+			width: 70%;
+            border-radius: 20px;
+            background: rgba(12, 43, 67, 0.5);
+            position: relative;
+            padding: 20px;
+            border: 2px solid #0c2b43;
+			margin-top: 100px;
+			margin-left: 15%;
+			margin-bottom: -50px;
+			text-align: center;
+			justify-content: center;
+		}
+
+		.services-text{
+			color: #f1f1f1;
+			font-size: 20px;
+			margin-top: 50px;
+		}
+
+		.services:hover{
+            border-color: #008bf8;
+            box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
         }
+
+		.services:hover .text-button {
+            transform: translate(-50%, 50%);
+            opacity: 1;
+        }
+
+		.services .text-title{
+			font-size: 40px;
+            font-weight: bold;
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		.news-cont{
+			margin: 100px 30%;
+ 			background-color: #0b242e;
+			border-radius: 10px;
+			position: relative;
+			text-align: center;
+		}
+
+		.news-det{
+			padding: 15px;
+			color: #f1f1f1;
+		}
+
+		.news-cont h2{
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		.news-cont input[type=text], input[type=submit]{
+			width: 100%;
+  			padding: 12px;
+  			border: 1px solid #7fc3e1;
+  			box-sizing: border-box;
+			border-radius: 10px;
+		}
+
+		.news-cont input[type=text]{
+			margin-left: 30px;
+			width: 93%
+		}
+
+		.news-cont input[type=submit]{
+			background-color: #2f96d0;
+  			color: #f1f1f1;
+  			border: none;
+			font-weight: bold;
+			font-size: 18px;
+		}
+
+		.news-cont input[type=submit]:hover {
+			background-color: #2B8ABF;
+		}
+
+		.news-cont #mail-icon{
+			color: #f1f1f1;
+			position: absolute;
+			display: flex;
+			margin-left: 3px;
+			margin-top: 12px;
+		}
 	</style>
 </head>
 <body>
@@ -431,12 +530,12 @@
 	</ul>
 	<!--Universal HTML END-->
 	<div class="taglines">
-		<h1>Unleash your inner builder</h1>
+		<h1>Unleash Your Inner Builder</h1>
 		<p>Hobby Haven can provide you with all sorts of model kits that you can think of!</p>
 	</div>
-	<button class="learn" onclick="document.location='#services'">
+	<button class="learn" onclick="document.location='login.html'">
 		<i class="fas fa-arrow-right" id="arrowR"></i>
-		<span class="text">Learn more</span>
+		<span class="text">Join us now</span>
  		<span class="circle"></span>
 		<i class="fas fa-arrow-right" id="arrowL"></i>
 	</button>
@@ -444,39 +543,79 @@
 		<hr><h2 class="textbox">Featured Products</h2>
 		<div class="card-cont">	 
 			<div class="products">
-				<div class="product-details">
+				<div class="text-details">
 					<img src="https://static.wikia.nocookie.net/gunplabuilders/images/9/9d/RG-RX-78-2-Gundam-Boxart.jpg/revision/latest/scale-to-width-down/1000?cb=20170325031323" alt="Product Image" style="width:100%">
-					<h2 class="product-title">(RG) RX-78-2 Gundam</h2>
-					<p class="product-body">$25</p>
-					<button class="product-button" onclick="document.location='shop.html'">Shop Now</button>
+					<h2 class="text-title">(RG) RX-78-2 Gundam</h2>
+					<p class="text-body">$25</p>
+					<button class="text-button" onclick="document.location='shop.html'">Shop Now</button>
 				</div>	
 			</div>
 			<div class="products">
-				<div class="product-details">
+				<div class="text-details">
 					<img src="https://static.wikia.nocookie.net/gundam/images/a/a3/Ms-06s-rg-box.jpg/revision/latest/scale-to-width-down/1000?cb=20111001094727" alt="Product Image" style="width:100%">
-					<h2 class="product-title">(RG)MS-06S Zaku II</h2>
-					<p class="product-body">$20</p>
-					<button class="product-button" onclick="document.location='shop.html'">Shop Now</button>
+					<h2 class="text-title">(RG)MS-06S Zaku II</h2>
+					<p class="text-body">$20</p>
+					<button class="text-button" onclick="document.location='shop.html'">Shop Now</button>
 				</div>	
 			</div>
 					
 			<div class="products">
-				<div class="product-details">
+				<div class="text-details">
 					<img src="https://static.wikia.nocookie.net/gundam/images/5/5e/Rg_aile_strike.jpg/revision/latest/scale-to-width-down/1000?cb=20111016193301" alt="Product Image" style="width:100%">
-					<h2 class="product-title">(RG)GAT-X105+AQM/E-X01 Aile Strike</h2>
-					<p class="product-body">$40</p>
-					<button class="product-button" onclick="document.location='shop.html'">Shop Now</button>
+					<h2 class="text-title">(RG)GAT-X105+AQM/E-X01 Aile Strike</h2>
+					<p class="text-body">$40</p>
+					<button class="text-button" onclick="document.location='shop.html'">Shop Now</button>
 				</div>	
 			</div>
 		</div>
 	</section>
 	<section id="services">
 		<hr><h2 class="textbox">Services</h2>
+		<div class="services-box">
+			<div class="services-logo">
+				<img src="images/logo min.png" width="150" height="auto">
+				<img src="images/logo full2.png" width="350" height="auto">
+			</div>
+			<p class="services-text">A dedicated space for model kit enthusiasts. We are a passionate community that celebrates the art of model building. Our site caters to hobbyists of all levels, from beginners taking their first steps into the world of model kits, to seasoned builders looking for their next challenge.</p>
+		</div>
 		<div class="card-cont">
-			<div class="card-about">
-				
+			<div class="services">
+				<div class="text-details">
+					<h1 class="text-title">Shop</h1>
+					<p class="text-body">Start shopping for new model kits now!</p>
+				</div>
+				<button class="text-button" onclick="document.location='shop.html'">Shop Now</button>
+			</div>
+			<div class="services">
+				<div class="text-details">
+					<h1 class="text-title">About Us</h1>
+					<p class="text-body">Learn more about our company and this website!</p>
+				</div>
+				<button class="text-button" onclick="document.location='about.html'">Learn More</button>
+			</div>
+			<div class="services">
+				<div class="text-details">
+					<h1 class="text-title">Contact Us</h1>
+					<p class="text-body">Contact us for more information and for support!</p>
+				</div>
+				<button class="text-button" onclick="document.location='contact.html'">Contact Us</button>
 			</div>
 		</div>
+	</section>
+	<section id="newsletter">
+		<form>
+			<div class="news-cont">
+				<div class="news-det">
+					<h2>Subscribe to our Newsletter for weekly updates!</h2>
+				</div>
+				<div class="news-det">
+					<i class="fas fa-envelope" id="mail-icon"></i><input type="text" placeholder="Email address" required>
+				</div>
+				<div class="news-det">
+					<input type="submit" value="SUBSCRIBE">
+				</div>
+			</div>
+		</form>
 	</section>
 	<!--Universal HTML Footer START-->
 	<footer class="footer">
@@ -487,6 +626,7 @@
 					<ul>
 						<li><a href="about.html">About Us</a></li>
 						<li><a href="#services">Services</a></li>
+						<li><a href="login.html">Join Us</a></li>
 					</ul>
 				</div>
 				<div class="footer-col">
