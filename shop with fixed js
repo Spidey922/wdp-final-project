@@ -488,7 +488,27 @@
 
 		.continue-button:active {
 		font-weight: 100;
-		}
+		}	
+		
+		
+		
+		.popup {
+    visibility: hidden;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+	z-index:999;
+}
+
+		
+		
+		
 	</style>
 </head>
 <body>
@@ -517,11 +537,11 @@
     </div>
 	
 	<ul class="sidebar" id="sidebar"> <!--Sidebar-->
-		<li><a href="home.html"><i class="fas fa-home "></i>Home</a></li>
-        <li><a href="home.html#services"><i class="fas fa-cogs"></i>Services</a></li>
-        <li><a href="shop.html"><i class="fas fa-shopping-basket"></i>Shop</a></li>
-        <li><a href="about.html"><i class="fas fa-users"></i>About Us</a></li>
-        <li><a href="contact.html"><i class="fas fa-envelope"></i>Contact Us</a></li>
+		<li><a href="home1.html"><i class="fas fa-home "></i>Home</a></li>
+        <li><a href="home1.html"><i class="fas fa-cogs"></i>Services</a></li>
+        <li><a href="shop1.html"><i class="fas fa-shopping-basket"></i>Shop</a></li>
+        <li><a href="about1.html"><i class="fas fa-users"></i>About Us</a></li>
+        <li><a href="cont1.html"><i class="fas fa-envelope"></i>Contact Us</a></li>
 	</ul>
 	<!--Universal HTML END-->
 	<div class="taglines2"><h1>Featured Products</h1></div>
@@ -684,7 +704,9 @@
 <hr class = "divider">
  
 
+<div class="popup">Successfully added to the cart.</div>
 
+    
 
 <div class="sucess-card">
   <span class="sucess-title"> Order sucess</span>
@@ -910,6 +932,25 @@ function updateCartDisplay() {
 			successCard.style.display = 'none';
 			clearCart();
 		});
+		
+		//popup2
+		
+		
+		const popup = document.querySelector('.popup');
+const addbuttons = document.querySelectorAll('.card3-button');
+
+addbuttons.forEach(function(addbutton) {
+    addbutton.addEventListener('click', function() {
+        popup.style.visibility = "visible";
+        setTimeout(function() {
+            popup.style.visibility = "hidden";
+        }, 2000);  // 2000ms = 2s
+    });
+});
+
+		
+		
+		
 
 </script>
 </body>
